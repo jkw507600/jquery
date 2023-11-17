@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax-wml</title>
+    <script src="../js/jquery-3.7.1.js"></script>
+    <style>
+        .tbl {
+            border-collapse: collapse; 
+            /* 엑셀처럼 칸 만들어줌 안하면 네모 사이에 여백이 있음 */
+        }
+        .tbl td {
+            border: 1px solid #333;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="title"></div>
+        <div class="list"></div>
+    </div>
+    <script>
+        $('.title').load('./title.html')
+        $.ajax({
+            url:'../ajax/db/jasondata.json',
+            success : function(data){
+                items = $(data).find('record')
+
+                if(items.length > 0) {
+                    var tbl = $('<table />').addClass('tbl')
+
+                    $.each(items,function(i,item){
+                        var id = $(item).find('id').text()
+                        var firstName = $(item).find('first_name').text()
+                        var lastName = $(item).find('last_name').text()
+                        var email = $(item).find('email').text()
+                        var gender = $(item).find('gender').text()
+
+                        var row = $('<tr />').append(
+                            $('<td />').text(id),
+                            $('<td />').text(firstName),
+                            $('<td />').text(lastName),
+                            $('<td />').text(email),
+                            $('<td />').text(gender),
+                        )
+                        tbl.append(row)
+                    })
+                    $('.list').append(tbl)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

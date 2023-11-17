@@ -7,7 +7,8 @@
     <script src="../js/jquery-3.7.1.js"></script>
     <style>
         .tbl {
-            border-collapse: collapse; //엑셀처럼 칸 만들어줌 안하면 네모 사이에 여백이 있음
+            border-collapse: collapse; 
+            /* 엑셀처럼 칸 만들어줌 안하면 네모 사이에 여백이 있음 */
         }
         .tbl td {
             border: 1px solid #333;
@@ -22,11 +23,29 @@
     </div>
 
     <script>
-        $('.title').load('./title.html')
-        $.ajax({
-            url:'./db/json.html',
-            success: function() {},
-            error: function() {}
+        $('.title').load('./title.html')                      //title에 title.html 집어넣기
+        $.ajax({                                              //ajax함수 시작
+            url:'./db/user.json',                             //서버에서 불러올 파일명
+            success: function(data) {                         //데이터를 전송 성공하면 실행될 문장
+                if(data.length > 0) {                         //만약 데이터 100개보다 크면
+                    var tbl = $('<table />').addClass('tbl')  //<table></table> 우리가 데이터를 table이라고 함수 지정. class= tbl
+                    
+                    $.each(data, function(i,item){            // 반복 함수,각각의 데이터(인덱스,데이터)를 반복. 
+                        var row = $('<tr />').append(         //한줄이 완성된 애들을 tr 라고 지정.
+                            $('<td />').text(item.id),        //item 데이터중 id(숫자) 글로 적겠다
+                            $('<td />').text(item.first_name),//item 데이터중 이름을 글로 적음
+                            $('<td />').text(item.last_name),
+                            $('<td />').text(item.email),
+                            $('<td />').text(item.gender),
+                        )
+                        tbl.append(row)                        //row 를 tbl에 집어넣어서 그 줄이 반복된다.
+                    })
+                    $('.list').append(tbl)                     //tbl를 '.list'에 집어넣음
+                }
+            },
+            error: function() {                                // 에러일 경우 일어나는 기능
+                $('.list').text('"데이터를 불러오지 못했습니다."')
+            }
         })
     </script>
 </body>
