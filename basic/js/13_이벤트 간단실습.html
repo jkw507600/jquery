@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-이벤트 간단실습</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+</head>
+<body>
+   <P class="btns">
+    <button class="minus">-</button>
+    <button class="default">100%</button>
+    <button class="plus">+</button>
+   </P>
+   <p class="font_size">font size: <span>14</span>px</p>
+   <p class="text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, natus aliquam? Perspiciatis molestiae ab esse quibusdam quis saepe corrupti facere ipsum aliquid, eligendi omnis praesentium rerum magnam provident accusamus commodi, nulla nemo. Autem eaque sequi laudantium voluptatum doloremque laboriosam quo ullam, totam et placeat earum dolores perferendis qui, velit officia.
+   </p>
+   <script>
+    //최대 20px, 최소 8px
+    let fontSize = 14
+    $('.btns button').on('click',function(){
+        if($(this).hasClass('plus')) {
+            if(fontSize >= 20) return
+            fontSize++
+        } else if($(this).hasClass('minus')) {
+            if(fontSize <=8 ) return
+            fontSize--
+        } else {
+            fontSize = 14
+        }
+        $('.font_size span').text(fontSize)
+        $('.text').css('fontSize', fontSize)
+        
+    })
+   </script>
+</body>
+</html>
