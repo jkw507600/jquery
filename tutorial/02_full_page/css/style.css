@@ -22,7 +22,7 @@ body {
     top: 10px;
     left: 20px;
     font-size: 32px;
-    z-index: 1;
+    z-index: 100;
 }
 
 .header span {
@@ -40,7 +40,8 @@ body {
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s
+    transition: all 0.3s;
+    z-index : 1
 }
 
 .nav.active {
@@ -61,7 +62,8 @@ body {
 }
 
 .nav li a.active {
-    color: tomato;
+    color: #000;
+    font-weight: bold;
 }
 
 .section {
