@@ -1,16 +1,17 @@
-.slide_container {
+.slider_container {
     position: relative;
 }
 
 .slide_01 {}
+
 .slide_01 .item {
+    height: 600px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 .slide_01 .item.item_01 {
-    height: 600px;
     background-image: url(../../images/slide_01.jpg);
 
 }
@@ -32,21 +33,36 @@
     font-size: 60px;
     font-weight: bold;
     animation: ani_scale 0.5s forwards;
+    opacity: 0;
 
 }
 
 .slide_text i {
-    display: inline-block;
+    display: block;
     margin: 36px 0 ;
     font-size: 36px;
-    color: #fff;
-
+    animation: ani_rotate 0.5s 0.8s forwards;
+    opacity: 0;
 }
 
 .slide_text p {
     position: relative;
-    margin-bottom: ;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: ani_bottom_top 0.5s 0.8s forwards;
 
+}
+
+.slide_text a {
+    position: relative;
+    display: inline-block;
+    background-color: tomato;
+    color: #fff;
+    padding: 10px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    opacity: 0;
+    animation: ani_top_bottom 0.5s 0.8s forwards;
 }
 
 .arrows {
@@ -63,7 +79,11 @@
 .arrows img {
     cursor: pointer;
     opacity: 0.4;
-    transition: ;
+    transition: all 0.3s;
+}
+
+.arrows img:hover {
+    opacity: 1;
 }
 
 @keyframes ani_scale {
@@ -77,7 +97,88 @@
     }
 }
 
+@keyframes ani_rotate {
+    0% {
+        opacity: 0;
+        transform: rotate(180deg);
+    }  
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes ani_bottom_top {
+    0% {
+        opacity: 0;
+        top: 20px;
+    }  
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+@keyframes ani_top_bottom {
+    0% {
+        opacity: 0;
+        top: -20px;
+    }  
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
 /* .slick-dots */
 .slick-dots {
-    display: none; 
+    bottom: 30px; 
+}
+
+.slick-dots li {
+    width: 30px;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.slick-dots li.slick-active {
+    width: 80px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slick-dots li button::before {
+    content: '';
+}
+
+.slide_02 {}
+
+.control {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%); 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.control .slide_count {
+    /* height: 30px; */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.control .btns {
+    display: flex;
+}
+
+.control .btns i {
+    width: 30px;
+    /* height: 30px; */
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }

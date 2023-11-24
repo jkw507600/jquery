@@ -4,11 +4,16 @@
 }
 
 .header_container {
+    
+}
+
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
     padding:  0 20px;
+   
 }
 
 .logo {
@@ -18,12 +23,14 @@
 
 .gnb {
     display: flex;
+  
 }
 
 .gnb li a {
     display: block;
-    padding: 30px 40px;
+    padding: 30px;
     font-weight: bold;
+   
 }
 
 .gnb li.active a {
