@@ -14,23 +14,12 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="header_container">
-            <header>
-                <div class="logo"><a href="#">가나다</a></div>
-                <ul class="gnb">
-                    <li><a href="#">홈</a></li>
-                    <li><a href="#">소개</a></li>
-                    <li><a href="#">사업</a></li>
-                    <li><a href="#">브랜드</a></li>
-                    <li><a href="#">가치</a></li>
-                    <li><a href="#">홍보</a></li>
-                    <li><a href="#">채용</a></li>
-                </ul>
-                <button>login</button>
-            </header>
+           
         </div>
     </div>
 
@@ -88,17 +77,20 @@
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas optio aliquam dolore nihil nulla, corporis, dolor quia id modi quasi ullam ut deserunt commodi delectus sed perferendis dolorum labore illum mollitia asperiores. Deleniti aperiam facilis alias sapiente excepturi quaerat totam corporis, dolorem sit! Suscipit nesciunt at odio quidem veritatis, voluptatum sequi deleniti inventore illum alias placeat ducimus temporibus quo aut asperiores eveniet rem perspiciatis eos molestiae voluptate. Accusantium, error delectus? Tenetur nostrum sapiente, velit aut perferendis quasi accusamus dolore voluptatibus.
         </p>
-        <div class="banner">
-            <p>안녕 jQuery</p>
-        </div>
+    </section>
 
-        <section>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum cum praesentium odio a tempora officia animi ducimus nesciunt error, eaque perspiciatis unde quia sit expedita quisquam omnis eveniet laboriosam, iste magni iusto ex est labore. Ratione in provident facere distinctio esse fugiat? Ut quisquam sapiente ipsam laboriosam nobis recusandae. Aspernatur illum impedit voluptate praesentium quae hic facere voluptatem alias, sunt, corrupti dignissimos unde veritatis, in et laudantium magnam. Aliquid assumenda eum officiis iure atque perferendis voluptate quibusdam tenetur rem pariatur? Doloribus beatae tempore voluptatum, nobis at veritatis corporis consequuntur a.
-            </p>
-        </section>
+    <div class="banner">
+        <p>안녕 jQuery</p>
+    </div>
+    
+    <section>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum cum praesentium odio a tempora officia animi ducimus nesciunt error, eaque perspiciatis unde quia sit expedita quisquam omnis eveniet laboriosam, iste magni iusto ex est labore. Ratione in provident facere distinctio esse fugiat? Ut quisquam sapiente ipsam laboriosam nobis recusandae. Aspernatur illum impedit voluptate praesentium quae hic facere voluptatem alias, sunt, corrupti dignissimos unde veritatis, in et laudantium magnam. Aliquid assumenda eum officiis iure atque perferendis voluptate quibusdam tenetur rem pariatur? Doloribus beatae tempore voluptatum, nobis at veritatis corporis consequuntur a.
+        </p>
+    </section>
 
-        <div class="slider_container">
+    <section>
+        <div class="slider_container slide3">
             <ul class="slide_03">
                 <li><img src="../../images/img_01.jpg" alt=""></li>
                 <li><img src="../../images/img_02.jpg" alt=""></li>
@@ -109,11 +101,14 @@
                 <li><img src="../../images/img_03.jpg" alt=""></li>
                 <li><img src="../../images/img_04.jpg" alt=""></li>
             </ul>
-            <div class="arrow">
+            <div class="slide03_arrows">
                 <i class="xi-long-arrow-left"></i>
                 <i class="xi-long-arrow-right"></i>
             </div>
         </div>
+    </section>
+
+    <section>
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error voluptas, fugit incidunt totam atque dolorum, molestias autem obcaecati rerum architecto sequi dignissimos laudantium doloremque? Pariatur est excepturi ex rem distinctio quidem obcaecati dolorem labore amet ad. Veritatis totam inventore id vel. Nemo culpa id adipisci rerum consequuntur dolore eveniet nesciunt?
         </p>
@@ -122,9 +117,19 @@
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error voluptas, fugit incidunt totam atque dolorum, molestias autem obcaecati rerum architecto sequi dignissimos laudantium doloremque? Pariatur est excepturi ex rem distinctio quidem obcaecati dolorem labore amet ad. Veritatis totam inventore id vel. Nemo culpa id adipisci rerum consequuntur dolore eveniet nesciunt?
         </p>
     </section>
+    
 
 <script>
     $(function() {
+        //해더 include
+        $('.header_container').load('../inc/header.html')
+
+        //프러렉스
+        $('.banner').parallax({
+            imageSrc: '../../images/slide_03.jpg',
+            float: 1
+        });
+
         // 슬라이드1
         $('.slide_01').slick({
             dots:true,
@@ -134,7 +139,6 @@
         })
 
         // 슬라이드 2
-        
         $('.slide_02').on('beforeChange', function(event, slick, currentSlide, nextSlide){
             // console.log(currentSlide, nextSlide);
             $('.slide_count').text(`${nextSlide + 1} / ${slick.slideCount}`) 
@@ -183,7 +187,26 @@
             easing: 'ease-in-out',
             delay : 600
         });
-        
+
+        //슬라이드 03
+        $('.slide_03').slick({
+            prevArrow: $(".xi-long-arrow-left"),
+            nextArrow: $(".xi-long-arrow-right"),
+            infinite: false,  //무한아니고 내가 선정한 사진들만 보여주때 false 무한은 true.
+            slidesToShow: 4,
+            slidesToScroll: 4,
+        })
+
+        $('.slide_03').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+           console.log(currentSlide);
+           if(currentSlide == 4) {
+            $('.xi-long-arrow-left').css('opacity',0.3)
+            $('.xi-long-arrow-right').css('opacity',1)
+           } else {
+            $('.xi-long-arrow-left').css('opacity',1)
+            $('.xi-long-arrow-right').css('opacity',0.3)
+           }
+        });
     })
 
 
