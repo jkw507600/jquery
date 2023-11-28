@@ -1,0 +1,62 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    font-weight: normal;
+}
+
+.accordion {
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+h3 {
+    background-color: #ddd;
+    padding: 12px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(45deg);
+    transition: all 0.3s;
+}
+
+h3.active::after {
+    transform: rotate(-135deg);
+    transition: all 0.3s;
+}
+
+.text {
+    background-color: #eee;
+    padding: 12px;
+    display: none;
+}

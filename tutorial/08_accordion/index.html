@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery -accordion</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>accordion</h1>
+    </div>    
+
+    <div class="accordion">
+        <div class="text_box">
+            <h3 class="">This is title 1</h3>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste corrupti accusamus natus ipsum eligendi aspernatur nam a rerum! Cumque sint aspernatur mollitia iure, dolore eum doloremque modi libero quod vero nulla, saepe at eligendi reiciendis earum corrupti placeat accusantium! A sit expedita quam! Dignissimos unde deserunt molestias deleniti! Veritatis, quasi.
+            </p>
+        </div>
+        <div class="text_box">
+            <h3>This is title 2</h3>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste corrupti accusamus natus ipsum eligendi aspernatur nam a rerum! Cumque sint aspernatur mollitia iure, dolore eum doloremque modi libero quod vero
+            </p>
+        </div>
+        <div class="text_box">
+            <h3>This is title 3</h3>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste corrupti accusamus natus ipsum eligendi aspernatur nam a rerum! Cumque sint aspernatur mollitia iure, dolore eum doloremque modi libero quod vero nulla, saepe at eligendi reiciendis earum corrupti placeat accusantium! A sit expedita quam! Dignissimos unde deserunt molestias deleniti! Veritatis, quasi.saepe at eligendi reiciendis earum corrupti placeat accusantium! A sit expedita quam! Dignissimos unde deserunt molestias deleniti! Veritatis, quasi.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        $('.text_box:first').find('h3').addClass('active')
+        $('.text_box:first').find('p').slideDown()
+
+        $('.text_box h3').on('click',function(){
+            if($(this).hasClass('active')) {    // active가 있다면
+            $('.text_box').find('p').slideUp() //전체를 다올리고
+            $(this).removeClass('active').next().slideUp()  //누른거 올라감
+            } else {
+                $('.text_box h3').removeClass('active')
+                $('.text_box').find('p').slideUp()
+                $(this).addClass('active').next().slideDown()
+            }
+        })    
+    </script>
+</body>
+</html>
