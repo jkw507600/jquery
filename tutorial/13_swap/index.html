@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery - swap logo</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo"><img src="../images/logo.svg" alt=""></div>
+                <ul class="gnb">
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">서비스</a></li>
+                    <li><a href="#">가치</a></li>
+                    <li><a href="#">홍보</a></li>
+                    <li><a href="#">투자</a></li>
+                    <li><a href="#">채용</a></li>
+                </ul>
+                <button>로그인</button>
+            </nav>
+        </header>
+        
+
+        <section>
+            <h1>
+                Lorem ipsum, dolor sit amet consectetur adipisicing.
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt tempore voluptatum eos cum sit amet voluptatibus consectetur accusantium? Aliquam optio qui debitis maxime excepturi nemo ipsam odio deserunt voluptate eligendi officiis nulla facilis adipisci, magnam, veniam praesentium possimus est! Facere similique, quisquam incidunt architecto accusamus, iste veniam unde commodi quo velit saepe. Fuga recusandae neque, in eius ab deserunt unde earum esse cupiditate magni, possimus officiis aut id repudiandae, veritatis quos repellat mollitia expedita nisi reprehenderit adipisci officia labore ipsum. Quae cum asperiores iure molestias eveniet vel consequuntur maiores magnam tempora minus veniam odio minima nostrum, nisi eum reprehenderit adipisci.
+            </p>
+        </section>
+        <section>
+            <h1>
+                Lorem ipsum, dolor sit amet consectetur adipisicing.
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt tempore voluptatum eos cum sit amet voluptatibus consectetur accusantium? Aliquam optio qui debitis maxime excepturi nemo ipsam odio deserunt voluptate eligendi officiis nulla facilis adipisci, magnam, veniam praesentium possimus est! Facere similique, quisquam incidunt architecto accusamus, iste veniam unde commodi quo velit saepe. Fuga recusandae neque, in eius ab deserunt unde earum esse cupiditate magni, possimus officiis aut id repudiandae, veritatis quos repellat mollitia expedita nisi reprehenderit adipisci officia labore ipsum. Quae cum asperiores iure molestias eveniet vel consequuntur maiores magnam tempora minus veniam odio minima nostrum, nisi eum reprehenderit adipisci.
+            </p>
+        </section>
+        <section>
+            <h1>
+                Lorem ipsum, dolor sit amet consectetur adipisicing.
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt tempore voluptatum eos cum sit amet voluptatibus consectetur accusantium? Aliquam optio qui debitis maxime excepturi nemo ipsam odio deserunt voluptate eligendi officiis nulla facilis adipisci, magnam, veniam praesentium possimus est! Facere similique, quisquam incidunt architecto accusamus, iste veniam unde commodi quo velit saepe. Fuga recusandae neque, in eius ab deserunt unde earum esse cupiditate magni, possimus officiis aut id repudiandae, veritatis quos repellat mollitia expedita nisi reprehenderit adipisci officia labore ipsum. Quae cum asperiores iure molestias eveniet vel consequuntur maiores magnam tempora minus veniam odio minima nostrum, nisi eum reprehenderit adipisci.
+            </p>
+        </section>
+        <section>
+            <h1>
+                Lorem ipsum, dolor sit amet consectetur adipisicing.
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt tempore voluptatum eos cum sit amet voluptatibus consectetur accusantium? Aliquam optio qui debitis maxime excepturi nemo ipsam odio deserunt voluptate eligendi officiis nulla facilis adipisci, magnam, veniam praesentium possimus est! Facere similique, quisquam incidunt architecto accusamus, iste veniam unde commodi quo velit saepe. Fuga recusandae neque, in eius ab deserunt unde earum esse cupiditate magni, possimus officiis aut id repudiandae, veritatis quos repellat mollitia expedita nisi reprehenderit adipisci officia labore ipsum. Quae cum asperiores iure molestias eveniet vel consequuntur maiores magnam tempora minus veniam odio minima nostrum, nisi eum reprehenderit adipisci.
+            </p>
+        </section>
+        <section>
+            <h1>
+                Lorem ipsum, dolor sit amet consectetur adipisicing.
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt tempore voluptatum eos cum sit amet voluptatibus consectetur accusantium? Aliquam optio qui debitis maxime excepturi nemo ipsam odio deserunt voluptate eligendi officiis nulla facilis adipisci, magnam, veniam praesentium possimus est! Facere similique, quisquam incidunt architecto accusamus, iste veniam unde commodi quo velit saepe. Fuga recusandae neque, in eius ab deserunt unde earum esse cupiditate magni, possimus officiis aut id repudiandae, veritatis quos repellat mollitia expedita nisi reprehenderit adipisci officia labore ipsum. Quae cum asperiores iure molestias eveniet vel consequuntur maiores magnam tempora minus veniam odio minima nostrum, nisi eum reprehenderit adipisci.
+            </p>
+        </section>
+        
+    </div>    
+
+    <script>
+         $(window).scroll(function() {
+            var scrollValue = $(window).scrollTop()
+
+            function logoSwap(url) {
+                $('.logo').find('img').attr('src', url)
+            }
+
+            if(scrollValue > 500) {
+                $('.nav').addClass('small')
+                logoSwap('../images/logo_s.svg')
+            } else {
+                $('.nav').removeClass('small')
+                logoSwap('../images/logo.svg')
+            }
+        })
+    </script>
+
+
+
+</body>
+</html>

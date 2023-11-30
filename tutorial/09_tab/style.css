@@ -10,6 +10,7 @@ ul {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 .container {
@@ -28,4 +29,35 @@ h1 {
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+}
+
+.tab li {
+    margin: 0 2px;
+}
+
+.tab a {
+    display: block;
+    padding: 6px 26px;
+    background-color: #ddd;
+}
+
+.tab a:hover {
+    background-color: #ccc;
+}
+
+.tab a.active {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+}
+
+.content {
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.content img {
+    display: block;
+    width: 100%;
 }

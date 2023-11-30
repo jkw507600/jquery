@@ -23,16 +23,16 @@
         </div>
 
         <ul class="list">
-            <li data-id="web">1<span>web</span></li>
-            <li data-id="ui">2<span>ui/ux</span></li>
-            <li data-id="web">3<span>web</span></li>
-            <li data-id="web">4<span>web</span></li>
-            <li data-id="js">5<span>js</span></li>
-            <li data-id="ui">6<span>ui/ux</span></li>
-            <li data-id="js">7<span>js</span></li>
-            <li data-id="js">8<span>js</span></li>
-            <li data-id="web">9<span>web</span></li>
-            <li data-id="web">10<span>web</span></li>
+            <li data-item="web">1<span>web</span></li>
+            <li data-item="ui">2<span>ui/ux</span></li>
+            <li data-item="web">3<span>web</span></li>
+            <li data-item="web">4<span>web</span></li>
+            <li data-item="js">5<span>js</span></li>
+            <li data-item="ui">6<span>ui/ux</span></li>
+            <li data-item="js">7<span>js</span></li>
+            <li data-item="js">8<span>js</span></li>
+            <li data-item="web">9<span>web</span></li>
+            <li data-item="web">10<span>web</span></li>
         </ul>
     </div>    
 
@@ -47,7 +47,7 @@
             btns.removeClass('active')
             $(this).addClass('active')
 
-            console.log(e.currentTarget.dataset.id)
+            // console.log(e.currentTarget.dataset.id)
 
             var category = e.currentTarget.dataset.id
 
@@ -55,7 +55,7 @@
                 items.show()
 
             } else {
-                item.hide().filter(`[data-item = ${category}]`.show())
+                items.hide().filter(`[data-item = ${category}]`).show()
                 // items.hide().filter(`[data-item ='+ catagory + ]`).show()
 
             }

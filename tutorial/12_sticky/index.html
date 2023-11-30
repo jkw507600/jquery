@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery -sticky</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>가나다</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam vitae veritatis qui aperiam molestias, rem dolores! Modi, est illo iste eveniet sequi esse quidem, deserunt maxime, neque veniam cum repudiandae?</p>
+            <div class="nav">
+                <ul class="gnb">
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">서비스</a></li>
+                    <li><a href="#">가치</a></li>
+                    <li><a href="#">홍보</a></li>
+                    <li><a href="#">투자</a></li>
+                    <li><a href="#">채용</a></li>
+                </ul>
+            </div>
+            <div class="main">
+                <div class="slide"></div>
+                <div class="section">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.</p>
+                </div>
+                <div class="section">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.</p>
+                </div>
+                <div class="section">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam quia dignissimos iure aut libero nobis tempora expedita voluptatem. Quisquam, magnam quia exercitationem placeat, omnis dicta numquam ex itaque eaque culpa, voluptatem facilis tempora ipsum quidem ullam odit et totam. Quae minima et culpa commodi pariatur nesciunt tempore perferendis adipisci.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="#x" class="go_top">top</a>
+
+        <script>
+            var navOffsetValue = $('.nav').offset().top 
+    
+            $(window).scroll(function() {
+                var scrollValue = $(document).scrollTop()
+    
+                if(scrollValue > navOffsetValue) {
+                    $('.nav').addClass('fixed')
+                } else {
+                    $('.nav').removeClass('fixed')
+                }
+    
+                if(scrollValue > 800) {
+                    $('.go_top').fadeIn()
+                } else {
+                    $('.go_top').fadeOut()
+                }
+            })
+    
+            $('.go_top').on('click', function() {
+                $('html, body').animate({scrollTop: 0})
+            })
+        </script>
+        
+    </div>    
+
+    </div>
+
+
+
+</body>
+</html>
